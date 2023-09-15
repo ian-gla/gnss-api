@@ -1,0 +1,13 @@
+####################################################################
+#  Author: Miguel Pereira
+#  This code is licensed under GNU General Public License version 3
+#  as published by the Free Software Foundation.
+#  (see LICENSE.txt for details)
+####################################################################
+cron:
+- description: "Create receiver points db"
+  url: /data_sweep
+  schedule: every 10 mins
+  retry_parameters:
+    min_backoff_seconds: 2.5
+    max_doublings: 5
