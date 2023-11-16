@@ -4,22 +4,16 @@
 #  as published by the Free Software Foundation.
 #  (see LICENSE.txt for details)
 ####################################################################
+from models.receiver_points_record import ReceiverPoints_Record
 import os
-import uuid
 
 import pg8000
 import sqlalchemy
-from sqlalchemy import Column
-from sqlalchemy.types import BigInteger, Integer, Text, String, DateTime, Float
-from geoalchemy2 import Geometry
-from sqlalchemy.sql import func
 from sqlalchemy.orm import sessionmaker
 from google.cloud.sql.connector import connector
-from flask import jsonify
-from models.gnss_record import *
-from models.locations_record import *
-from models.profile_record import *
-from models.receiver_points_record import ReceiverPoints_Record
+from models.gnss_record import GNSS_Record
+from models.locations_record import Locations_Record
+from models.profile_record import Profile_Record
 
 db_user = os.environ.get('CLOUD_SQL_USERNAME')
 db_password = os.environ.get('CLOUD_SQL_PASSWORD')

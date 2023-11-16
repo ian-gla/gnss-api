@@ -9,24 +9,15 @@
 
 # main.py
 import os
-from flask import Flask, request, jsonify
-from sqlalchemy import text, func, update, exc
-import shapely.wkt
-import geojson
+from flask import Flask, request
+from sqlalchemy import text
 # Import the Firebase service
 import firebase_admin
-from firebase_admin import auth
-from firebase_admin import credentials
-from geoalchemy2 import elements, functions
 # import local files
 import db
-import models.gnss_record as gnss_model
-import models.locations_record as location_record
-import models.profile_record as profile_record
 import methods.location_record_methods as loc_rec_meths
 import methods.gnss_record_methods as gnss_rec_meths
 import methods.profile_record_methods as profile_rec_meths
-import methods.receiver_points_methods as recv_points_meths
 
 app = Flask(__name__)
 cred = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")

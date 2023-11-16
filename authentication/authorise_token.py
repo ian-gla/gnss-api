@@ -9,9 +9,7 @@
 Utils for authorising user tokens using the Firebase Authentication db.
 """
 import flask
-import firebase_admin
 from firebase_admin import auth
-from firebase_admin import credentials
 
 # auth token.
 
@@ -19,7 +17,7 @@ from firebase_admin import credentials
 def auth_token(request: flask.Request) -> bool:
     token = request.headers.get("authorization")
     try:
-        decoded_token = auth.verify_id_token(token)
+        auth.verify_id_token(token)
         return True
 
     except (auth.InvalidIdTokenError, ValueError) as e:

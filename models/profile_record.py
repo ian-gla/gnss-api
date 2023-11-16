@@ -6,7 +6,7 @@
 ####################################################################
 from sqlalchemy import Column
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.types import BigInteger, Integer, Text, String, DateTime, Float
+from sqlalchemy.types import Integer, Text, Float
 
 Base = declarative_base()
 

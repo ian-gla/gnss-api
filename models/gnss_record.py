@@ -7,8 +7,7 @@
 from sqlalchemy import Column
 from sqlalchemy.sql import func
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.types import BigInteger, Integer, Text, String, DateTime, Float
-from geoalchemy2 import Geometry
+from sqlalchemy.types import BigInteger, Integer, Text, DateTime, Float
 
 Base = declarative_base()
 # Notes:
